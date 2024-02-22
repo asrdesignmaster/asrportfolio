@@ -17,7 +17,9 @@
 
   <title>Portfolio</title>  
 
-<link href="./main.d8e0d294.css" rel="stylesheet"></head>
+  <link href="./main.d8e0d294.css" rel="stylesheet">
+<script src="https://tympanus.net/Development/Elastislide/js/modernizr.custom.17475.js"></script>	
+</head>
 
 <body class="">
 
@@ -87,20 +89,35 @@
         <div class="card">
           <div class="card-block">
             <h2>Portfolio</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <img src="./assets/images/projects/flyer-3.jpg" class="img-responsive" alt="">
-                <h3 class="h5">Flyer</h3>
-              </div>
-              <div class="col-md-4">
-                <img src="./assets/images/projects/ggl-logo.jpg" class="img-responsive" alt="">
-                <h3 class="h5">Logo Design</h3>
-              </div>
-              <div class="col-md-4">
-                <img src="./assets/images/projects/bodytec-logo.jpg" class="img-responsive" alt="">
-                <h3 class="h5">Logo Design</h3>
-              </div>
-            </div>
+            <h4>Logo Design</h4>
+            <ul id="carousel" class="elastislide-list">
+              <li><a href="#"><img src="./assets/images/projects/ggl-logo.jpg" alt="image01" /></a></li>
+              <li><a href="#"><img src="./assets/images/projects/bodytec-logo.jpg" alt="image01" /></a></li>
+              <li><a href="#"><img src="./assets/images/projects/HR-logo.jpg" alt="image01" /></a></li>
+              <li><a href="#"><img src="./assets/images/projects/kd-logo.jpg" alt="image01" /></a></li>
+              <li><a href="#"><img src="./assets/images/projects/sanjivni-logo.jpg" alt="image01" /></a></li>
+              <li><a href="#"><img src="./assets/images/projects/sequins-logo.jpg" alt="image01" /></a></li>
+              <li><a href="#"><img src="./assets/images/projects/xpress-logo.jpg" alt="image01" /></a></li>
+            </ul>
+            <h4>Flyer & Brochure Design</h4>
+            <ul id="carouselFlyer" class="elastislide-list">
+              <li><a href="#"><img src="./assets/images/projects/flyer-3.jpg" alt="image01" /></a></li>
+              <li><a href="#"><img src="./assets/images/projects/flyer-6.jpg" alt="image01" /></a></li>
+              <li><a href="#"><img src="./assets/images/projects/ffco.png" alt="image01" /></a></li>
+              <li><a href="#"><img src="./assets/images/projects/nebtech-horizontal.jpeg" alt="image01" /></a></li>
+              <li><a href="#"><img src="./assets/images/projects/rehmania-menu.jpeg" alt="image01" /></a></li>
+            </ul>
+            <h4>Website Design</h4>
+            <ul id="carouselWeb" class="elastislide-list">
+              <li><a target="_blank" href="https://dy-namic.com"><img src="./assets/images/projects/dy-namic.jpg" alt="image01" /></a></li>
+              <li><a target="_blank" href="#"><img src="./assets/images/projects/avpeco-scaled.jpg" alt="image01" /></a></li>
+              <li><a target="_blank" href="https://glorousgoldleafing.com"><img src="./assets/images/projects/gloriousgoldleafing-scaled.jpg" alt="image01" /></a></li>
+              <li><a target="_blank" href="https://fr-systems.com"><img src="./assets/images/projects/fr-systems.jpeg" alt="image01" /></a></li>
+              <li><a target="_blank" href="https://kitabdaar.com"><img src="./assets/images/projects/kitabdaar.com.jpg" alt="image01" /></a></li>
+              <li><a target="_blank" href="https://modernbuildings.com"><img src="./assets/images/projects/modernbuildings-ksa.jpg" alt="image01" /></a></li>
+              <li><a target="_blank" href="https://polluxenterprise.com"><img src="./assets/images/projects/polluxenterprise.jpg" alt="image01" /></a></li>
+              <li><a target="_blank" href="https://tanveerisrar.com"><img src="./assets/images/projects/tanveerisrar.jpg" alt="image01" /></a></li>
+            </ul>
           </div>
         </div>
 
@@ -173,7 +190,7 @@
                     <div class="progress">
                       <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-                    <span><strong>Adobe illustrator</strong> (Logo, Branding, Brochure etc)</span> <span class="pull-right">85%</span>
+                    <span><strong>Adobe illustrator</strong> (Logo, Branding, Brochure & Flyer etc)</span> <span class="pull-right">85%</span>
                     <div class="progress">
                       <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
@@ -370,5 +387,23 @@
 </script>
 
 --><script type="text/javascript" src="./main.bc58148c.js"></script></body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://tympanus.net/Development/Elastislide/js/jquery.elastislide.js"></script>
+		<script type="text/javascript">
+			
+			$( '#carousel'
+      ).elastislide( {
+				minItems : 2
+			} );
+			$( '#carouselFlyer'
+      ).elastislide( {
+				minItems : 2
+			} );
+			$( '#carouselWeb'
+      ).elastislide( {
+				minItems : 2
+			} );
+			
+		</script>
 
 </html>
