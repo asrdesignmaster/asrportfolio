@@ -31,27 +31,23 @@
                 <nav>
                     <ul>
                         <!-- about -->
-                        <li><a href="#about-us" data-label="About">
+                        <li><a href="#about-us" data-label="About" class="active">
                                 <i class="fa-solid fa-address-book"></i>
                             </a></li>
                         <!-- Skills -->
                         <li><a href="#skills" data-label="Skills">
                                 <i class="fa-solid fa-layer-group"></i>
                             </a></li>
-                        <!-- Services -->
-                        <li><a href="#" data-label="Services">
-                                <i class="fa-solid fa-screwdriver-wrench"></i>
-                            </a></li>
                         <!-- Projects -->
-                        <li><a href="#" data-label="Projects">
+                        <li><a href="#projects" data-label="Projects">
                                 <i class="fa-solid fa-briefcase"></i>
                             </a></li>
-                        <!-- Education -->
-                        <li><a href="#" data-label="Education">
+                        <!-- Work -->
+                        <li><a href="#work" data-label="Work Experience">
                                 <i class="fa-solid fa-file-lines"></i>
                             </a></li>
                         <!-- Contact -->
-                        <li><a href="#" data-label="Contact">
+                        <li><a href="#contact" data-label="Contact">
                                 <i class="fa-solid fa-paper-plane"></i>
                             </a></li>
                     </ul>
@@ -500,8 +496,42 @@
                             <span class="work-location">Location</span>
                             <p>From scrach to end from UI/UX design to coding, publishing and maintaining these 3 sites.</p>
                          </div>
+                         <div class="work-box">
+                            <span class="work-year">2018 - 2024</span>
+                            <strong>heading</strong>
+                            <span class="work-location">Location</span>
+                            <p>From scrach to end from UI/UX design to coding, publishing and maintaining these 3 sites.</p>
+                         </div>
                      </div>
                 </div>
+              </section>
+              <!-- =============== Contact =============== -->
+              <section id="contact" class="section-container">
+                <div class="section-heading">
+                    <span><i class="fa-solid fa-paper-plane"></i> Contact</span>
+                    <h3>Let's Get In Touch</h3>
+                </div>
+                <!-- container -->
+                 <div class="contact-box-container">
+                    <div class="contact-box bg-gredient">
+                        <!-- icon -->
+                         <div class="contact-box-icon">
+                            <i class="fa-solid fa-address-book"></i>
+                            <strong>Phone</strong>
+                         </div>
+                         <!-- detail -->
+                          <span>+91 123456789</span>
+                    </div>
+                    <div class="contact-box bg-gredient">
+                        <!-- icon -->
+                         <div class="contact-box-icon">
+                            <i class="fa-regular fa-envelope"></i>
+                            <strong>Email</strong>
+                         </div>
+                         <!-- detail -->
+                          <span>test@test.com</span>
+                    </div>
+                 </div>
               </section>
         </div>
     </div>
@@ -564,7 +594,40 @@
                     });
                 })
             })
+
+
+
+            // nav active link
+            const section = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll("ul li a");
+
+            function setActiveLink() {
+            let currentSection = "";
+
+            section.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                currentSection = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${currentSection}`) {
+                link.classList.add("active");
+                }
+            });
+            }
+
+            window.addEventListener("scroll", setActiveLink);
+
         });
+        
+        
+
+    
     </script>
 </body>
 
