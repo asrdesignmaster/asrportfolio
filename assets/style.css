@@ -299,32 +299,51 @@ header nav ul li a:hover::after {
         padding: 8px 0;
     }
 
-    #about-content {
-        overflow: hidden;
-        max-height: 300px;
-        /* height of around first 2 paragraphs */
-        transition: max-height 0.8s ease, opacity 0.8s ease;
-        opacity: 1;
+}
 
-        p {
-            color: var(--text-color);
-            font-size: 1rem;
-            margin-top: 10px;
-            max-width: 750px;
-            display: none;
 
-            &:nth-child(-n+2) {
-                display: block;
-                /* Show first 2 paragraphs */
-            }
-        }
 
-        #toggle-btn {
-            margin-top: 15px;
-            padding: 8px 16px;
-            cursor: pointer;
-        }
-    }
+
+/* Container for paragraphs */
+.paragraph-container {
+    overflow: hidden; /* Ensures smooth transitions without overflow issues */
+}
+
+.paragraph-container p {
+
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-top: 10px;
+    max-width: 750px;
+
+}
+
+/* Fade transition styles */
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+    transform: translateY(20px); /* Slight slide-up effect */
+}
+
+.fade-enter-to,
+.fade-leave-from {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: Style the button */
+#about-us .show_more_less_btn {
+    color: var(--main-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    text-decoration: underline;
 }
 
 /* skills  */
@@ -583,6 +602,9 @@ header nav ul li a:hover::after {
         }
     }
 }
+
+
+
 
 /* work  */
 .work-container {
