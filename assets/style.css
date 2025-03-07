@@ -552,6 +552,7 @@ header nav ul li a:hover::after {
                     gap: 6px;
                     span {
                         color: var(--text-color) !important;
+
                         font-size: 0.7rem;
                         background-color: var(--bg-color);
                         border-radius: 20px;

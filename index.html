@@ -390,6 +390,7 @@
                     ],
                     projectsItems:[
                         {   
+
                             href: 'https://rnakashmir.com', 
                             image:"projects/rna-kashmir.webp", 
                             projectName:"RNA Kashmir", 
@@ -397,6 +398,7 @@
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
+
                         {   
                             href: 'https://newagecanada.com/', 
                             image:"projects/new-age-canada.jpg", 
@@ -427,19 +429,23 @@
                             category:'web_design' 
                         },
                         {   href: 'https://glorousgoldleafing.com/', 
+
                             image:"projects/gloriousgoldleafing-scaled.jpg", 
                             projectName:"Glorious Gold Leafing", 
                             tag:["WordPress"], 
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
+
                         {   href: 'https://tanveerisrar.com/', 
+
                             image:"projects/tanveerisrar.jpg", 
                             projectName:"Tanveer Israr", 
                             tag:["WordPress"], 
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
+
                         {   href: 'https://amroha.info/', 
                             image:"projects/amroha.jpg", 
                             projectName:"Amroha", 
@@ -656,6 +662,7 @@
                     return this.showMore ? this.aboutParagraphs : this.aboutParagraphs.slice(0, this.initialLimit);
                 }
             },
+
             methods: {
                 setActiveLink() {
                     const sections = document.querySelectorAll('section');
@@ -672,11 +679,13 @@
                     this.menuItems.forEach((item) => {
                         item.active = item.href === `#${currentSection}`;
                     });
+
                 },
                 //about us show more btn
                 toggleShowMore() {
                 this.showMore = !this.showMore; // Toggle between true and false
             }
+
             },
             mounted() {
                 window.addEventListener('scroll', this.setActiveLink);
@@ -730,8 +739,6 @@
             typeRole();
         });
 
-
-
         // project filter
         document.addEventListener('DOMContentLoaded', () => {
             const filterButtons = document.querySelectorAll('.project-list li');
@@ -754,6 +761,7 @@
                 })
             })
         });
+
 
         // aos install
         AOS.init();
