@@ -235,6 +235,17 @@ header nav ul li a:hover::after {
     }
 }
 
+.user_address{
+    margin-top: 16px;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 16px 20px 0;
+    width: 100%;
+    p{
+        font-size: 0.9rem;
+    }
+}
+
 
 .section-container {
     background: linear-gradient(120deg, var(--gradient-start), var(--gradient-end)) !important;
@@ -517,17 +528,20 @@ header nav ul li a:hover::after {
                     font-weight: 500;
                     text-transform: uppercase;
                 }
-
-                span {
-                    color: var(--text-color);
-                    font-size: 0.7rem;
-                    background-color: var(--bg-color);
-                    border-radius: 20px;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    font-weight: 500;
-                    padding: 5px 15px;
-                    transition: all ease 0.3s;
+                .tag-wrapper{
+                    display: flex;
+                    gap: 6px;
+                    span {
+                        color: var(--text-color);
+                        font-size: 0.7rem;
+                        background-color: var(--bg-color);
+                        border-radius: 20px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        font-weight: 500;
+                        padding: 5px 15px;
+                        transition: all ease 0.3s;
+                    }
                 }
             }
 
