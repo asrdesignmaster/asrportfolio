@@ -72,18 +72,14 @@
              <section id="about-us" class="section-container">
                 <h3>Hello, I am <span id="role">Web Developer</span></h3>
                 <h1>Senior Web Designer / Developer and Graphic Dsigner from Mumbai, India.</h1>
-                    <p>I'm a versatile creative professional with a passion for bringing ideas to life through design and web development. <strong>My journey began in the world of graphic design,</strong> where I honed my skills in visual storytelling and creating captivating visuals.
-                    </p>
-                    <p>Eager to expand my horizons, I embarked on a journey of self-improvement and skill acquisition. I expanded my skill set into the realm of web development. <strong>I mastered HTML and CSS,</strong> delving into the intricacies of crafting seamless and visually pleasing web experiences. Furthering my expertise, <strong>I ventured into PHP, gaining proficiency in developing dynamic and interactive web applications.</strong>
-                    </p>
-                    <p>Continuing this evolution, <strong>I immersed myself in the realm of React component design.</strong> Embracing the latest technologies, I delved into React, enhancing my ability to create responsive and user-friendly interfaces that elevate the overall user experience.
-                    </p>
-                    <p>Not stopping there, <strong>I dived into the world of WordPress,</strong> where I honed my skills in developing robust and visually appealing websites. My expertise in WordPress has allowed me to bring a diverse range of projects to life, each tailored to meet unique client needs.
-                    </p>
-                    <p>Expanding my toolkit, <strong>I embraced Figma as a design platform, utilizing it to conceptualize, prototype, and breathe life into web ideas.</strong> This proficiency in Figma has streamlined my design process, allowing for more efficient collaboration and the creation of visually stunning and user-centric designs.
-                    </p>
-                    <p>In my current role, <strong> leverage this comprehensive skill set to seamlessly transition between graphic and web design.</strong> Whether it's crafting engaging visuals, developing WordPress sites, or designing intuitive interfaces in Figma, I approach each project with a blend of creativity and technical finesse.
-                    </p>
+                <transition-group name="fade" tag="div" class="paragraph-container">
+                    <!-- Display paragraphs dynamically -->
+                    <p v-for="(paragraph, index) in visibleParagraphs" :key="index" v-html="paragraph"></p>
+                    <!-- Show More / Show Less button -->
+                </transition-group>
+                    <div class="show_more_less_btn" v-if="aboutParagraphs.length > initialLimit" @click="toggleShowMore">
+                        {{ showMore ? 'Show Less' : 'Show More' }}
+                    </div>
              </section>
              <!-- =============== Skills =============== -->
              <section id="skills" class="section-container">
@@ -248,13 +244,13 @@
                 <ul class="project-list">
                     <li class="active" data-filter="all">All</li>
                     <li class="" data-filter="logo_design">Logo Design</li>
-                    <li class="" data-filter="flyer_brocure">Flyers & Brocure</li>
+                    <li class="" data-filter="flyer_brochure">Flyers & Brocure</li>
                     <li class="" data-filter="web_design">Web Design</li>
                     <li class="" data-filter="branding">Branding</li>
                 </ul>
                 <!-- project container  -->
                  <div class="project-container"  data-aos="fade-up">
-                    <div v-for="project in projectsItems" :key="project.id">
+                    <div v-for="(project, index) in projectsWithIds" :key="project.id">
                         <!-- project box -->
                         <a :href="project.href" target="_blank" class="project-box" :class="project.class" :data-category="project.category">
                             <!-- img -->
@@ -288,22 +284,43 @@
                      <div class="work-box-container">
                         <!-- box  -->
                          <div class="work-box" data-aos="fade-up">
-                            <span class="work-year">2018 - 2024</span>
-                            <strong>heading</strong>
-                            <span class="work-location">Location</span>
+                            <span class="work-year">2024 - Till Now</span>
+                            <strong>UI developer & Graphic Designer</strong>
+                            <span class="work-location">New Age Canada (Canada - Remote Work)</span>
+                            <p>Handling 3 websites for New Age canada.</p>
+                            <p>New Age America 2 internal website here.</p>
                             <p>From scrach to end from UI/UX design to coding, publishing and maintaining these 3 sites.</p>
+                            <p>For the company products all the flyer broucher amazon product pages and store design material done by myself.</p>
                          </div>
                          <div class="work-box" data-aos="fade-up">
-                            <span class="work-year">2018 - 2024</span>
-                            <strong>heading</strong>
-                            <span class="work-location">Location</span>
-                            <p>From scrach to end from UI/UX design to coding, publishing and maintaining these 3 sites.</p>
+                            <span class="work-year">2020-2024</span>
+                            <strong>UI Developer </strong>
+                            <span class="work-location"> PropertyLoop (London, UK - Remote Work)</span>
+                            <p>Create React frontend UI development work with the help of HTML, CSS with Tailwind and Ionic framework, create components ready to add functionality by React developers. Also helping UX designer to create Figma UX designs.</p>
                          </div>
                          <div class="work-box" data-aos="fade-up">
-                            <span class="work-year">2018 - 2024</span>
-                            <strong>heading</strong>
-                            <span class="work-location">Location</span>
-                            <p>From scrach to end from UI/UX design to coding, publishing and maintaining these 3 sites.</p>
+                            <span class="work-year">2019-2020</span>
+                            <strong>UI Developer </strong>
+                            <span class="work-location"> Pollux Enterprises (Mumbai)</span>
+                            <p>Develop UX Figma design to HTML CSS frontend design in CodeIgniter(PHP) using vsCode and prepare the page to add functionality by code developers.</p>
+                         </div>
+                         <div class="work-box" data-aos="fade-up">
+                            <span class="work-year">2007-2018</span>
+                            <strong>Sr. Graphic & Web Designer </strong>
+                            <span class="work-location">Zultec Group (Jeddah,KSA)</span>
+                            <p>Web Design & Maintain Company's all Websites. Graphis: Design Brochures, Flyers, Exhibition Stand Branding & Assist to Marketing Manager.</p>
+                         </div>
+                         <div class="work-box" data-aos="fade-up">
+                            <span class="work-year">2004-2006</span>
+                            <strong>Graphic Designer </strong>
+                            <span class="work-location">Promo Insight (Jeddah,KSA)</span>
+                            <p>Making Brochures, Flyers, Logos & Brandings.</p>
+                         </div>
+                         <div class="work-box" data-aos="fade-up">
+                            <span class="work-year">2003-2004</span>
+                            <strong>Graphic Designer </strong>
+                            <span class="work-location">AlFun (Jeddah,KSA)</span>
+                            <p>Making Brochures, Flyers, Logos & Brandings.</p>
                          </div>
                      </div>
                 </div>
@@ -372,7 +389,8 @@
                         { id: 4, href: 'https://in.linkedin.com/in/altamash-rashid', icon: 'fa-brands fa-linkedin' },
                     ],
                     projectsItems:[
-                        {   id: 1, 
+                        {   
+
                             href: 'https://rnakashmir.com', 
                             image:"projects/rna-kashmir.webp", 
                             projectName:"RNA Kashmir", 
@@ -380,61 +398,271 @@
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
-                        {   id: 2, 
-                            href: 'https://newageamerica.com/ca/', 
+
+                        {   
+                            href: 'https://newagecanada.com/', 
                             image:"projects/new-age-canada.jpg", 
                             projectName:"New Age Canada", 
-                            tag:["WordPress"], 
+                            tag:["WordPress", "Canada","eCoomerce"], 
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
-                        {   id: 3, 
-                            href: 'https://dy-namic.com', 
+                        {   href: 'https://kitabdaar.com/', 
+                            image:"projects/kitabdaar.jpg", 
+                            projectName:"Kitabdaar", 
+                            tag:["WordPress","eCoomerce", "Urdu"], 
+                            class: 'web_design_item', 
+                            category:'web_design' 
+                        },
+                        {   href: 'https://newageamerica.com/us/', 
+                            image:"projects/new-age-america.jpg", 
+                            projectName:"New Age America", 
+                            tag:["WordPress", "USA","eCoomerce"], 
+                            class: 'web_design_item', 
+                            category:'web_design' 
+                        },
+                        {   href: 'https://dy-namic.com', 
                             image:"projects/dy-namic.jpg", 
                             projectName:"Dynamic Agency", 
-                            tag:[
-                                "WordPress",
-                                "Dubai"
-                            ], 
+                            tag:["WordPress","Dubai"], 
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
-                        {   id: 4, 
-                            href: 'https://glorousgoldleafing.com/', 
+                        {   href: 'https://glorousgoldleafing.com/', 
+
                             image:"projects/gloriousgoldleafing-scaled.jpg", 
                             projectName:"Glorious Gold Leafing", 
                             tag:["WordPress"], 
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
-                        {   id: 5, 
-                            href: 'https://tanveerisrar.com/', 
+
+                        {   href: 'https://tanveerisrar.com/', 
+
                             image:"projects/tanveerisrar.jpg", 
                             projectName:"Tanveer Israr", 
                             tag:["WordPress"], 
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
-                        {   id: 6, 
-                            href: 'https://amroha.info/', 
+
+                        {   href: 'https://amroha.info/', 
                             image:"projects/amroha.jpg", 
                             projectName:"Amroha", 
-                            tag:["PHP"], 
+                            tag:["PHP", "City info"], 
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
-                        {   id: 7, 
-                            href: '', 
+                        {   href: '', 
                             image:"logos/logo-3dots-media.jpg", 
                             projectName:"3 Dots Media", 
-                            tag:["WordPress"], 
+                            tag:["Logo"], 
                             class: 'logo_item', 
                             category:'logo_design' 
                         },
+                        {   href: '', 
+                            image:"logos/logo-kitabdaar.jpg", 
+                            projectName:"Kitabdaar", 
+                            tag:["Logo"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-bowers.jpg", 
+                            projectName:"Bowers", 
+                            tag:["Logo"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-brit-buzzard.jpg", 
+                            projectName:"Brit Buzzard", 
+                            tag:["Logo"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-newage-canada.jpg", 
+                            projectName:"NewAge Canada", 
+                            tag:["Logo"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-ntrackx.jpg", 
+                            projectName:"nTrackx", 
+                            tag:["Logo"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-pollux.jpg", 
+                            projectName:"Pollux Enterprises", 
+                            tag:["Logo"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-talal.jpg", 
+                            projectName:"Talal", 
+                            tag:["Logo"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-jazbaa.jpg", 
+                            projectName:"Jazba", 
+                            tag:["Logo"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"flyers/brochure-2.jpg", 
+                            projectName:"Food Co.", 
+                            tag:["Brochure"], 
+                            class: 'logo_item', 
+                            category:'flyer_brochure' 
+                        },
+                        {   href: '', 
+                            image:"flyers/brochure-4.jpg", 
+                            projectName:"Software", 
+                            tag:["Brochure"], 
+                            class: 'logo_item', 
+                            category:'flyer_brochure' 
+                        },
+                        {   href: '', 
+                            image:"flyers/brochure-5.jpg", 
+                            projectName:"Engineering", 
+                            tag:["Brochure"], 
+                            class: 'logo_item', 
+                            category:'flyer_brochure' 
+                        },
+                        {   href: '', 
+                            image:"flyers/brochure-1.jpg", 
+                            projectName:"Lina Dates", 
+                            tag:["Brochure"], 
+                            class: 'logo_item', 
+                            category:'flyer_brochure' 
+                        },
+                        {   href: '', 
+                            image:"flyers/brochure-7.jpg", 
+                            projectName:"Talal", 
+                            tag:["Brochure"], 
+                            class: 'logo_item', 
+                            category:'flyer_brochure' 
+                        },
+                        {   href: '', 
+                            image:"flyers/flyer-1.jpg", 
+                            projectName:"KAEC", 
+                            tag:["Flyer"], 
+                            class: 'logo_item', 
+                            category:'flyer_brochure' 
+                        },
+                        {   href: '', 
+                            image:"flyers/flyer-7.jpg", 
+                            projectName:"Lina Dates", 
+                            tag:["Flyer"], 
+                            class: 'logo_item', 
+                            category:'flyer_brochure' 
+                        },
+                        {   href: '', 
+                            image:"flyers/flyer-8.jpg", 
+                            projectName:"Lina Dates", 
+                            tag:["Flyer"], 
+                            class: 'logo_item', 
+                            category:'flyer_brochure' 
+                        },
+                        {   href: '', 
+                            image:"flyers/flyer-12.jpg", 
+                            projectName:"Lina Dates", 
+                            tag:["Flyer"], 
+                            class: 'logo_item', 
+                            category:'flyer_brochure' 
+                        },
+                        {   href: '', 
+                            image:"flyers/flyer-13.jpeg", 
+                            projectName:"Rehmania Restaurant", 
+                            tag:["Flyer"], 
+                            class: 'logo_item', 
+                            category:'flyer_brochure' 
+                        },
+                        {   href: '', 
+                            image:"flyers/flyer-10.jpg", 
+                            projectName:"KAEC", 
+                            tag:["Flyer"], 
+                            class: 'logo_item', 
+                            category:'flyer_brochure' 
+                        },
+                        {   href: '', 
+                            image:"branding/branding-1.jpg", 
+                            projectName:"3dotsmedia", 
+                            tag:["Branding"], 
+                            class: 'logo_item', 
+                            category:'branding' 
+                        },
+                        {   href: '', 
+                            image:"branding/branding-2.jpg", 
+                            projectName:"3dotsmedia", 
+                            tag:["Branding"], 
+                            class: 'logo_item', 
+                            category:'branding' 
+                        },
+                        {   href: '', 
+                            image:"branding/branding-3.jpg", 
+                            projectName:"3dotsmedia", 
+                            tag:["Branding"], 
+                            class: 'logo_item', 
+                            category:'branding' 
+                        },
+                        {   href: '', 
+                            image:"branding/branding-4.jpg", 
+                            projectName:"3dotsmedia", 
+                            tag:["Branding"], 
+                            class: 'logo_item', 
+                            category:'branding' 
+                        },
+                        {   href: '', 
+                            image:"branding/branding-5.jpg", 
+                            projectName:"3dotsmedia", 
+                            tag:["Branding"], 
+                            class: 'logo_item', 
+                            category:'branding' 
+                        },
+                        {   href: '', 
+                            image:"branding/branding-6.jpg", 
+                            projectName:"3dotsmedia", 
+                            tag:["Branding"], 
+                            class: 'logo_item', 
+                            category:'branding' 
+                        },
 
-                    ]
+                    ],
+                    aboutParagraphs: [
+                        "I'm a versatile creative professional with a passion for bringing ideas to life through design and web development. <strong>My journey began in the world of graphic design,</strong> where I honed my skills in visual storytelling and creating captivating visuals.",
+                        "Eager to expand my horizons, I embarked on a journey of self-improvement and skill acquisition. I expanded my skill set into the realm of web development. <strong>I mastered HTML and CSS,</strong> delving into the intricacies of crafting seamless and visually pleasing web experiences. Furthering my expertise, <strong>I ventured into PHP, gaining proficiency in developing dynamic and interactive web applications.</strong>",
+                        "Continuing this evolution, <strong>I immersed myself in the realm of React component design.</strong> Embracing the latest technologies, I delved into React, enhancing my ability to create responsive and user-friendly interfaces that elevate the overall user experience.",
+                        "Not stopping there, <strong>I dived into the world of WordPress,</strong> where I honed my skills in developing robust and visually appealing websites. My expertise in WordPress has allowed me to bring a diverse range of projects to life, each tailored to meet unique client needs.",
+                        "Expanding my toolkit, <strong>I embraced Figma as a design platform, utilizing it to conceptualize, prototype, and breathe life into web ideas.</strong> This proficiency in Figma has streamlined my design process, allowing for more efficient collaboration and the creation of visually stunning and user-centric designs.",
+                        "In my current role, <strong>I leverage this comprehensive skill set to seamlessly transition between graphic and web design.</strong> Whether it's crafting engaging visuals, developing WordPress sites, or designing intuitive interfaces in Figma, I approach each project with a blend of creativity and technical finesse."
+                    ],
+
+                    showMore: false, // Toggle state
+                    initialLimit: 2, // Number of paragraphs to show initially
                 };
             },
+            computed: {
+                projectsWithIds() {
+                    return this.projectsItems.map((project, index) => ({
+                        ...project,
+                        id: index + 1 // Start IDs from 1
+                    }));
+                },
+                visibleParagraphs() {
+                    // Return only initialLimit paragraphs if not showing more, otherwise return all
+                    return this.showMore ? this.aboutParagraphs : this.aboutParagraphs.slice(0, this.initialLimit);
+                }
+            },
+
             methods: {
                 setActiveLink() {
                     const sections = document.querySelectorAll('section');
@@ -451,7 +679,13 @@
                     this.menuItems.forEach((item) => {
                         item.active = item.href === `#${currentSection}`;
                     });
-                }
+
+                },
+                //about us show more btn
+                toggleShowMore() {
+                this.showMore = !this.showMore; // Toggle between true and false
+            }
+
             },
             mounted() {
                 window.addEventListener('scroll', this.setActiveLink);
@@ -504,6 +738,30 @@
             // start type role funciton
             typeRole();
         });
+
+        // project filter
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.project-list li');
+            const projects = document.querySelectorAll('.project-box');
+
+            filterButtons.forEach((button) => {
+                button.addEventListener('click', ()=>{
+                    filterButtons.forEach((btn) => btn.classList.remove("active"));
+                    button.classList.add("active");
+
+                    const filter = button.getAttribute('data-filter');
+
+                    projects.forEach((project) => {
+                        if (filter === 'all' || project.getAttribute("data-category") === filter) {
+                            project.style.display = "block";
+                        } else {
+                            project.style.display = "none";
+                        }
+                    });
+                })
+            })
+        });
+
 
         // aos install
         AOS.init();
