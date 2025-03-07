@@ -48,10 +48,6 @@
                         <li><a href="#work" data-label="Work Experience">
                                 <i class="fa-solid fa-file-lines"></i>
                             </a></li>
-                        <!-- Contact -->
-                        <li><a href="#contact" data-label="Contact">
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </a></li>
                     </ul>
                 </nav>
             </header>
@@ -68,6 +64,7 @@
                             <span>Web Developer</span>
                             <h1>Altamash S. Rashid</h1>
                             <div class="profile-social-container">
+                                <a class="fa-icon fa-icon-2x" href="tel:00917304776286"> <i class="fa fa-phone"></i></a>
                                 <a class="fa-icon fa-icon-2x" href="mailto:asr.designmaster@gmail.com"> <i class="fa fa-envelope"></i></a>
                                 <a class="fa-icon fa-icon-2x" href="https://wa.me/917304776286"> <i class="fa-brands fa-whatsapp"></i></a>
                                 <a class="fa-icon fa-icon-2x" href="https://in.linkedin.com/in/altamash-rashid" title="linkedin" target="_blank">
@@ -75,11 +72,6 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
-                    <!-- btns -->
-                    <div class="user-profile-btns">
-                        <a href="profile.pdf" target="_blank" download>Download CV</a>
-                        <a href="">Contact Me</a>
                     </div>
                 </div>
             </div>
@@ -507,33 +499,41 @@
                      </div>
                 </div>
               </section>
-              <!-- =============== Contact =============== -->
-              <section id="contact" class="section-container">
+              <!-- =============== education =============== -->
+              <section id="education" class="section-container">
                 <div class="section-heading">
-                    <span><i class="fa-solid fa-paper-plane"></i> Contact</span>
-                    <h3>Let's Get In Touch</h3>
+                    <span><i class="fa-solid fa-graduation-cap"></i> Education</span>
                 </div>
-                <!-- container -->
-                 <div class="contact-box-container">
-                    <div class="contact-box bg-gredient" data-aos="fade-up">
-                        <!-- icon -->
-                         <div class="contact-box-icon">
-                            <i class="fa-solid fa-address-book"></i>
-                            <strong>Phone</strong>
+                <div class="eduction-container">
+                    <!-- box container -->
+                     <div class="eduction-box-container">
+                        <!-- box  -->
+                         <div class="eduction-box" data-aos="fade-up">
+                            <span class="eduction-year">2000</span>
+                            <strong>Master of Arts (M.A.)</strong>
+                            <span class="eduction-location">Mumbai</span>
+                            <p>Mumbai University</p>
                          </div>
-                         <!-- detail -->
-                          <span>+91 123456789</span>
-                    </div>
-                    <div class="contact-box bg-gredient" data-aos="fade-up">
-                        <!-- icon -->
-                         <div class="contact-box-icon">
-                            <i class="fa-regular fa-envelope"></i>
-                            <strong>Email</strong>
+                         <div class="eduction-box" data-aos="fade-up">
+                            <span class="eduction-year">1997</span>
+                            <strong>Bachelor of Arts (B.A.)</strong>
+                            <span class="eduction-location">Mumbai</span>
+                            <p>Maharashtra Collage of Arts, Commerce & Science</p>
                          </div>
-                         <!-- detail -->
-                          <span>test@test.com</span>
-                    </div>
-                 </div>
+                         <div class="eduction-box" data-aos="fade-up">
+                            <span class="eduction-year">1994</span>
+                            <strong>Higher Secondary School (H.S.C - 12<sup>th</sup>)</strong>
+                            <span class="eduction-location">Thane</span>
+                            <p>Ideal High School and Junior Collage</p>
+                         </div>
+                         <div class="eduction-box" data-aos="fade-up">
+                            <span class="eduction-year">1990</span>
+                            <strong>Secondary School (S.S.C - 10<sup>th</sup>)</strong>
+                            <span class="eduction-location">Mumbai</span>
+                            <p>M.H. Saboo Siddique High School & Engineering Collage</p>
+                         </div>
+                     </div>
+                </div>
               </section>
         </div>
     </div>
@@ -627,26 +627,7 @@
             window.addEventListener("scroll", setActiveLink);
 
         });
-        
-
-        // document.addEventListener('DOMContentLoaded', () => {
-        // // show more and less about us
-        //     const toggleBtn = document.getElementById('toggle-btn');
-        //     const paragraphs = document.querySelectorAll('#about-content p');
-        //     let isExpanded = false;
-
-        //     toggleBtn.addEventListener('click', () => {
-        //         isExpanded = !isExpanded;
-        //         paragraphs.forEach((p, index) => {
-        //             if (index >= 2) {
-        //                 p.style.display = isExpanded ? 'block' : 'none';
-        //             }
-        //         });
-        //         toggleBtn.textContent = isExpanded ? 'Show Less' : 'Show More';
-        //     });
-        // }
-
-        
+   
         // aos install
         AOS.init();
     
