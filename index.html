@@ -24,7 +24,7 @@
 
 </head>
 
-<body>
+<body id="app">
 
     <div class="main-container"> <!--==Menu and Profile ===== -->
         <div class="menu-profile">
@@ -32,22 +32,11 @@
             <header>
                 <nav>
                     <ul>
-                        <!-- about -->
-                        <li><a href="#about-us" data-label="About" class="active">
-                                <i class="fa-solid fa-address-book"></i>
-                            </a></li>
-                        <!-- Skills -->
-                        <li><a href="#skills" data-label="Skills">
-                                <i class="fa-solid fa-layer-group"></i>
-                            </a></li>
-                        <!-- Projects -->
-                        <li><a href="#projects" data-label="Projects">
-                                <i class="fa-solid fa-briefcase"></i>
-                            </a></li>
-                        <!-- Work -->
-                        <li><a href="#work" data-label="Work Experience">
-                                <i class="fa-solid fa-file-lines"></i>
-                            </a></li>
+                        <li v-for="item in menuItems" :key="item.id">
+                            <a :href="item.href" :data-label="item.label" :class="{ active: item.active }">
+                                <i :class="item.icon"></i>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
             </header>
@@ -64,13 +53,14 @@
                             <span>Web Developer</span>
                             <h1>Altamash S. Rashid</h1>
                             <div class="profile-social-container">
-                                <a class="fa-icon fa-icon-2x" href="tel:00917304776286"> <i class="fa fa-phone"></i></a>
-                                <a class="fa-icon fa-icon-2x" href="mailto:asr.designmaster@gmail.com"> <i class="fa fa-envelope"></i></a>
-                                <a class="fa-icon fa-icon-2x" href="https://wa.me/917304776286"> <i class="fa-brands fa-whatsapp"></i></a>
-                                <a class="fa-icon fa-icon-2x" href="https://in.linkedin.com/in/altamash-rashid" title="linkedin" target="_blank">
-                                    <i class="fa-brands fa-linkedin"></i>
-                                </a>
+                                <div class="" v-for="socialItem in socialMediaItems" :key="socialItem.id">
+                                    <a class="fa-icon fa-icon-2x" :href="socialItem.href" target="_blank"> <i :class="socialItem.icon"></i></a>
+                                </div>
                             </div>
+                            <!-- user-address -->
+                             <div class="user_address">
+                                <p>36/38, Alloparoo Bldg, 4th floor, Xlane, Charnull, Dongri, Mumbai-400009, India.</p>
+                             </div>
                         </div>
                     </div>
                 </div>
@@ -150,10 +140,10 @@
                          </div>
                          <!-- bar -->
                           <div class="skill-box-bar">
-                            <span style="width:90%"></span>
+                            <span style="width:95%"></span>
                           </div>
                           <!-- percentage -->
-                          <span class="skill-box-percentage">90%</span>
+                          <span class="skill-box-percentage">95%</span>
                     </div>
                     <!-- skill-box end -->
                     <!-- Illustrator -->
@@ -264,207 +254,26 @@
                 </ul>
                 <!-- project container  -->
                  <div class="project-container"  data-aos="fade-up">
-                    <!-- project box  Web Design -->
-                     <a href="https://rnakashmir.com" target="_blank" class="project-box web_design_item" data-category="web_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/projects/rna-kashmir.webp" alt="project">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>rna kashmir</strong>
-                                <span>WordPress</span>
+                    <div v-for="project in projectsItems" :key="project.id">
+                        <!-- project box -->
+                        <a :href="project.href" target="_blank" class="project-box" :class="project.class" :data-category="project.category">
+                            <!-- img -->
+                            <div class="project-box-img">
+                                <img :src="'assets/images/' + project.image" :alt="project.projectName">
                             </div>
-                            <!-- link icon 
-                             <div class="project-box-btn">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                             </div>-->
-                          </div>
-                     </a>
-                     <a href="https://newageamerica.com/ca/" target="_blank" class="project-box web_design_item" data-category="web_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/projects/new-age-america.jpg" alt="project">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>New Age America</strong>
-                                <span>WordPress</span>
+                            <!-- text -->
+                            <div class="project-box-text-container">
+                                <!-- detail -->
+                                <div class="project-box-text">
+                                    <strong>{{ project.projectName }}</strong>
+                                    <div class="tag-wrapper">
+                                        <span v-for="(tag, index) in project.tag" :key="index">{{ tag }}</span>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                     </a>
-                     <a href="https://newagecanada.com/" target="_blank" class="project-box web_design_item" data-category="web_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/projects/new-age-canada.jpg" alt="project">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>New Age Canada</strong>
-                                <span>WordPress</span>
-                            </div>
-                          </div>
-                     </a>
-                     <a href="https://dy-namic.com/" target="_blank" class="project-box web_design_item" data-category="web_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/projects/dy-namic.jpg" alt="project">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>Dynamic Dubai</strong>
-                                <span>WordPress</span>
-                            </div>
-                          </div>
-                     </a>
-                     <a href="https://glorousgoldleafing.com/" target="_blank" class="project-box web_design_item" data-category="web_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/projects/gloriousgoldleafing-scaled.jpg" alt="project">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>Glorious Gold Leafing</strong>
-                                <span>WordPress</span>
-                            </div>
-                          </div>
-                     </a>
-                     <a href="https://tanveerisrar.com/" target="_blank" class="project-box web_design_item" data-category="web_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/projects/tanveerisrar.jpg" alt="project">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>Tanveer Israr</strong>
-                                <span>WordPress</span>
-                            </div>
-                          </div>
-                     </a>
-                     <a href="https://amroha.info/" target="_blank" class="project-box web_design_item" data-category="web_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/projects/amroha.jpg" alt="project">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>Amroha</strong>
-                                <span>PHP</span>
-                            </div>
-                          </div>
-                     </a>
-                     <a href="" class="project-box" data-category="logo_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/logos/logo-3dots-media.jpg" alt="3dots media">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>3 Dots Media</strong>
-                                <span>Logo</span>
-                            </div>
-                          </div>
-                     </a>
-                     <a href="" class="project-box" data-category="logo_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/logos/logo-kitabdaar.jpg" alt="Kitabdaar">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>Kitabdaar</strong>
-                                <span>Logo</span>
-                            </div>
-                          </div>
-                     </a>
-                     <a href="" class="project-box" data-category="logo_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/logos/logo-bowers.jpg" alt="Bowers">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>Bowers</strong>
-                                <span>Logo</span>
-                            </div>
-                          </div>
-                     </a>
-                     <a href="" class="project-box" data-category="logo_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/logos/logo-brit-buzzard.jpg" alt="Brit Buzzard">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>Brit Buzzard</strong>
-                                <span>Logo</span>
-                            </div>
-                          </div>
-                     </a>
-                     <a href="" class="project-box" data-category="logo_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/logos/logo-newage-canada.jpg" alt="NewAge Canada">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>NewAge Canada</strong>
-                                <span>Logo</span>
-                            </div>
-                          </div>
-                     </a>
-                     <a href="" class="project-box" data-category="logo_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/logos/logo-ntrackx.jpg" alt="nTrackx">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>nTrackx</strong>
-                                <span>Logo</span>
-                            </div>
-                          </div>
-                     </a>
-                     <a href="" class="project-box" data-category="logo_design">
-                        <!-- img -->
-                         <div class="project-box-img">
-                            <img src="assets/images/logos/logo-pollux.jpg" alt="Pollux Enterprises">
-                         </div>
-                         <!-- text -->
-                          <div class="project-box-text-container">
-                            <!-- detail -->
-                            <div class="project-box-text">
-                                <strong>Pollux Enterprises</strong>
-                                <span>Logo</span>
-                            </div>
-                          </div>
-                     </a>
+                        </a>
+                    </div>
+                     
 
                  </div>
              </section>
@@ -537,12 +346,132 @@
               </section>
         </div>
     </div>
+    <!-- Add Vue.js CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- scroll animation  -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
+        // Vue App for Menu
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    menuItems: [
+                        { id: 1, href: '#about-us', label: 'About', icon: 'fa-solid fa-address-book', active: true },
+                        { id: 2, href: '#skills', label: 'Skills', icon: 'fa-solid fa-layer-group', active: false },
+                        { id: 3, href: '#projects', label: 'Projects', icon: 'fa-solid fa-briefcase', active: false },
+                        { id: 4, href: '#work', label: 'Work Experience', icon: 'fa-solid fa-file-lines', active: false },
+                        { id: 5, href: '#education', label: 'Education', icon: 'fa-solid fa-graduation-cap', active: false }
+                    ],
+                    socialMediaItems:[
+                        { id: 1, href: 'tel:00917304776286', icon: 'fa-solid fa-phone' },
+                        { id: 2, href: 'mailto:asr.designmaster@gmail.com', icon: 'fa-solid fa-envelope' },
+                        { id: 3, href: 'https://wa.me/917304776286', icon: 'fa-brands fa-whatsapp' },
+                        { id: 4, href: 'https://in.linkedin.com/in/altamash-rashid', icon: 'fa-brands fa-linkedin' },
+                    ],
+                    projectsItems:[
+                        {   id: 1, 
+                            href: 'https://rnakashmir.com', 
+                            image:"projects/rna-kashmir.webp", 
+                            projectName:"RNA Kashmir", 
+                            tag:["WordPress"], 
+                            class: 'web_design_item', 
+                            category:'web_design' 
+                        },
+                        {   id: 2, 
+                            href: 'https://newageamerica.com/ca/', 
+                            image:"projects/new-age-canada.jpg", 
+                            projectName:"New Age Canada", 
+                            tag:["WordPress"], 
+                            class: 'web_design_item', 
+                            category:'web_design' 
+                        },
+                        {   id: 3, 
+                            href: 'https://dy-namic.com', 
+                            image:"projects/dy-namic.jpg", 
+                            projectName:"Dynamic Agency", 
+                            tag:[
+                                "WordPress",
+                                "Dubai"
+                            ], 
+                            class: 'web_design_item', 
+                            category:'web_design' 
+                        },
+                        {   id: 4, 
+                            href: 'https://glorousgoldleafing.com/', 
+                            image:"projects/gloriousgoldleafing-scaled.jpg", 
+                            projectName:"Glorious Gold Leafing", 
+                            tag:["WordPress"], 
+                            class: 'web_design_item', 
+                            category:'web_design' 
+                        },
+                        {   id: 5, 
+                            href: 'https://tanveerisrar.com/', 
+                            image:"projects/tanveerisrar.jpg", 
+                            projectName:"Tanveer Israr", 
+                            tag:["WordPress"], 
+                            class: 'web_design_item', 
+                            category:'web_design' 
+                        },
+                        {   id: 6, 
+                            href: 'https://amroha.info/', 
+                            image:"projects/amroha.jpg", 
+                            projectName:"Amroha", 
+                            tag:["PHP"], 
+                            class: 'web_design_item', 
+                            category:'web_design' 
+                        },
+                        {   id: 7, 
+                            href: '', 
+                            image:"logos/logo-3dots-media.jpg", 
+                            projectName:"3 Dots Media", 
+                            tag:["WordPress"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+
+                    ]
+                };
+            },
+            methods: {
+                setActiveLink() {
+                    const sections = document.querySelectorAll('section');
+                    let currentSection = '';
+
+                    sections.forEach((section) => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.offsetHeight;
+                        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                            currentSection = section.getAttribute('id');
+                        }
+                    });
+
+                    this.menuItems.forEach((item) => {
+                        item.active = item.href === `#${currentSection}`;
+                    });
+                }
+            },
+            mounted() {
+                window.addEventListener('scroll', this.setActiveLink);
+                this.setActiveLink(); // Initial call to set active link on page load
+            },
+            beforeUnmount() {
+                window.removeEventListener('scroll', this.setActiveLink);
+            }
+        }).mount('#app');
+
+
+
         // Word typing effect 
         document.addEventListener('DOMContentLoaded', () => {
-            const roles = ['Web Developer', 'Web Designer', 'UI/UX Designer', 'Graphic Designer'];
+            const roles = [
+                'Web Developer', 
+                'Web Designer', 
+                'UI/UX Designer', 
+                'Graphic Designer'
+            ];
             const roleElement = document.getElementById('role');
 
             let roleIndex = 0;
@@ -575,63 +504,11 @@
             // start type role funciton
             typeRole();
         });
-    
-        // project filter
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.project-list li');
-            const projects = document.querySelectorAll('.project-box');
 
-            filterButtons.forEach((button) => {
-                button.addEventListener('click', ()=>{
-                    filterButtons.forEach((btn) => btn.classList.remove("active"));
-                    button.classList.add("active");
-
-                    const filter = button.getAttribute('data-filter');
-
-                    projects.forEach((project) => {
-                        if (filter === 'all' || project.getAttribute("data-category") === filter) {
-                            project.style.display = "block";
-                        } else {
-                            project.style.display = "none";
-                        }
-                    });
-                })
-            })
-
-
-
-            // nav active link
-            const section = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll("ul li a");
-
-            function setActiveLink() {
-            let currentSection = "";
-
-            section.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-
-                if (window.scrollY >= sectionTop - sectionHeight / 3) {
-                currentSection = section.getAttribute("id");
-                }
-            });
-
-            navLinks.forEach((link) => {
-                link.classList.remove("active");
-                if (link.getAttribute("href") === `#${currentSection}`) {
-                link.classList.add("active");
-                }
-            });
-            }
-
-            window.addEventListener("scroll", setActiveLink);
-
-        });
-   
         // aos install
         AOS.init();
-    
     </script>
+
 </body>
 
 </html>
