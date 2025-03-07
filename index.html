@@ -254,7 +254,7 @@
                 </ul>
                 <!-- project container  -->
                  <div class="project-container"  data-aos="fade-up">
-                    <div v-for="project in projectsItems" :key="project.id">
+                    <div v-for="(project, index) in projectsWithIds" :key="project.id">
                         <!-- project box -->
                         <a :href="project.href" target="_blank" class="project-box" :class="project.class" :data-category="project.category">
                             <!-- img -->
@@ -372,7 +372,7 @@
                         { id: 4, href: 'https://in.linkedin.com/in/altamash-rashid', icon: 'fa-brands fa-linkedin' },
                     ],
                     projectsItems:[
-                        {   id: 1, 
+                        {   
                             href: 'https://rnakashmir.com', 
                             image:"projects/rna-kashmir.webp", 
                             projectName:"RNA Kashmir", 
@@ -380,7 +380,7 @@
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
-                        {   id: 2, 
+                        {   
                             href: 'https://newageamerica.com/ca/', 
                             image:"projects/new-age-canada.jpg", 
                             projectName:"New Age Canada", 
@@ -388,7 +388,7 @@
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
-                        {   id: 3, 
+                        {   
                             href: 'https://dy-namic.com', 
                             image:"projects/dy-namic.jpg", 
                             projectName:"Dynamic Agency", 
@@ -399,7 +399,7 @@
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
-                        {   id: 4, 
+                        {  
                             href: 'https://glorousgoldleafing.com/', 
                             image:"projects/gloriousgoldleafing-scaled.jpg", 
                             projectName:"Glorious Gold Leafing", 
@@ -407,7 +407,7 @@
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
-                        {   id: 5, 
+                        {   
                             href: 'https://tanveerisrar.com/', 
                             image:"projects/tanveerisrar.jpg", 
                             projectName:"Tanveer Israr", 
@@ -415,7 +415,7 @@
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
-                        {   id: 6, 
+                        {   
                             href: 'https://amroha.info/', 
                             image:"projects/amroha.jpg", 
                             projectName:"Amroha", 
@@ -423,17 +423,66 @@
                             class: 'web_design_item', 
                             category:'web_design' 
                         },
-                        {   id: 7, 
-                            href: '', 
+                        {   href: '', 
                             image:"logos/logo-3dots-media.jpg", 
                             projectName:"3 Dots Media", 
-                            tag:["WordPress"], 
+                            tag:["Adobe"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-kitabdaar.jpg", 
+                            projectName:"Kitabdaar", 
+                            tag:["Adobe"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-bowers.jpg", 
+                            projectName:"Bowers", 
+                            tag:["Adobe"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-brit-buzzard.jpg", 
+                            projectName:"Brit Buzzard", 
+                            tag:["Adobe"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-newage-canada.jpg", 
+                            projectName:"NewAge Canada", 
+                            tag:["Adobe"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-ntrackx.jpg", 
+                            projectName:"nTrackx", 
+                            tag:["Adobe"], 
+                            class: 'logo_item', 
+                            category:'logo_design' 
+                        },
+                        {   href: '', 
+                            image:"logos/logo-pollux.jpg", 
+                            projectName:"Pollux Enterprises", 
+                            tag:["Adobe"], 
                             class: 'logo_item', 
                             category:'logo_design' 
                         },
 
                     ]
                 };
+            },
+            computed: {
+                projectsWithIds() {
+                    return this.projectsItems.map((project, index) => ({
+                        ...project,
+                        id: index + 1 // Start IDs from 1
+                    }));
+                }
             },
             methods: {
                 setActiveLink() {
