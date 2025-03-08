@@ -596,42 +596,56 @@
                         {   href: '', 
                             image:"branding/branding-1.jpg", 
                             projectName:"3dotsmedia", 
-                            tag:["Branding"], 
+                            tag:["Branding", "Logo Design"], 
                             class: 'logo_item', 
                             category:'branding' 
                         },
                         {   href: '', 
                             image:"branding/branding-2.jpg", 
                             projectName:"3dotsmedia", 
-                            tag:["Branding"], 
+                            tag:["Branding", "Creative"], 
                             class: 'logo_item', 
                             category:'branding' 
                         },
                         {   href: '', 
                             image:"branding/branding-3.jpg", 
                             projectName:"3dotsmedia", 
-                            tag:["Branding"], 
+                            tag:["Branding", "Colors"], 
                             class: 'logo_item', 
                             category:'branding' 
                         },
                         {   href: '', 
                             image:"branding/branding-4.jpg", 
                             projectName:"3dotsmedia", 
-                            tag:["Branding"], 
+                            tag:["Branding", "Typography"], 
                             class: 'logo_item', 
                             category:'branding' 
                         },
                         {   href: '', 
                             image:"branding/branding-5.jpg", 
                             projectName:"3dotsmedia", 
-                            tag:["Branding"], 
+                            tag:["Branding", "Cards"], 
                             class: 'logo_item', 
                             category:'branding' 
                         },
                         {   href: '', 
                             image:"branding/branding-6.jpg", 
                             projectName:"3dotsmedia", 
-                            tag:["Branding"], 
+                            tag:["Branding", "Stationary"], 
+                            class: 'logo_item', 
+                            category:'branding' 
+                        },
+                        {   href: '', 
+                            image:"branding/branding-7.jpg", 
+                            projectName:"3dotsmedia", 
+                            tag:["Branding", "Presentation"], 
+                            class: 'logo_item', 
+                            category:'branding' 
+                        },
+                        {   href: '', 
+                            image:"branding/branding-8.jpg", 
+                            projectName:"3dotsmedia", 
+                            tag:["Branding", "Brouchure"], 
                             class: 'logo_item', 
                             category:'branding' 
                         },
@@ -664,36 +678,13 @@
             },
 
             methods: {
-                setActiveLink() {
-                    const sections = document.querySelectorAll('section');
-                    let currentSection = '';
-
-                    sections.forEach((section) => {
-                        const sectionTop = section.offsetTop;
-                        const sectionHeight = section.offsetHeight;
-                        if (window.scrollY >= sectionTop - sectionHeight / 3) {
-                            currentSection = section.getAttribute('id');
-                        }
-                    });
-
-                    this.menuItems.forEach((item) => {
-                        item.active = item.href === `#${currentSection}`;
-                    });
-
-                },
                 //about us show more btn
                 toggleShowMore() {
                 this.showMore = !this.showMore; // Toggle between true and false
             }
 
             },
-            mounted() {
-                window.addEventListener('scroll', this.setActiveLink);
-                this.setActiveLink(); // Initial call to set active link on page load
-            },
-            beforeUnmount() {
-                window.removeEventListener('scroll', this.setActiveLink);
-            }
+
         }).mount('#app');
 
 
@@ -760,6 +751,31 @@
                     });
                 })
             })
+            // nav active link
+            const section = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll("ul li a");
+
+            function setActiveLink() {
+            let currentSection = "";
+
+            section.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (window.scrollY >= sectionTop - sectionHeight / 3) {
+                currentSection = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${currentSection}`) {
+                link.classList.add("active");
+                }
+            });
+            }
+
+            window.addEventListener("scroll", setActiveLink);
         });
 
 
