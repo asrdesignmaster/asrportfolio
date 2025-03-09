@@ -102,15 +102,8 @@
                     <!-- <p v-for="(paragraph, index) in visibleParagraphs" :key="index" v-html="paragraph"></p> -->
                      <p>{{ translations[language].aboutP1}}</p>
                      <p>{{ translations[language].aboutP2}}</p>
-                     <p>{{ translations[language].aboutP3}}</p>
-                     <p>{{ translations[language].aboutP4}}</p>
-                     <p>{{ translations[language].aboutP5}}</p>
-                     <p>{{ translations[language].aboutP6}}</p>
                     <!-- Show More / Show Less button -->
                 </transition-group>
-                    <div class="show_more_less_btn" v-if="aboutParagraphs.length > initialLimit" @click="toggleShowMore">
-                        {{ showMore ? 'Show Less' : 'Show More' }}
-                    </div>
              </section>
              <!-- =============== Skills =============== -->
              <section id="skills" class="section-container">
@@ -736,12 +729,8 @@
                     ],
                     
                     aboutParagraphs: [
-                        "I'm a versatile creative professional with a passion for bringing ideas to life through design and web development. <strong>My journey began in the world of graphic design,</strong> where I honed my skills in visual storytelling and creating captivating visuals.",
-                        "Eager to expand my horizons, I embarked on a journey of self-improvement and skill acquisition. I expanded my skill set into the realm of web development. <strong>I mastered HTML and CSS,</strong> delving into the intricacies of crafting seamless and visually pleasing web experiences. Furthering my expertise, <strong>I ventured into PHP, gaining proficiency in developing dynamic and interactive web applications.</strong>",
-                        "Continuing this evolution, <strong>I immersed myself in the realm of React component design.</strong> Embracing the latest technologies, I delved into React, enhancing my ability to create responsive and user-friendly interfaces that elevate the overall user experience.",
-                        "Not stopping there, <strong>I dived into the world of WordPress,</strong> where I honed my skills in developing robust and visually appealing websites. My expertise in WordPress has allowed me to bring a diverse range of projects to life, each tailored to meet unique client needs.",
-                        "Expanding my toolkit, <strong>I embraced Figma as a design platform, utilizing it to conceptualize, prototype, and breathe life into web ideas.</strong> This proficiency in Figma has streamlined my design process, allowing for more efficient collaboration and the creation of visually stunning and user-centric designs.",
-                        "In my current role, <strong>I leverage this comprehensive skill set to seamlessly transition between graphic and web design.</strong> Whether it's crafting engaging visuals, developing WordPress sites, or designing intuitive interfaces in Figma, I approach each project with a blend of creativity and technical finesse."
+                        "I'm a versatile creative professional passionate about design and web development. My journey began in graphic design, where I honed my skills in visual storytelling and captivating visuals. Expanding my expertise, I mastered HTML, CSS, and PHP, enabling me to craft seamless, dynamic web experiences. My passion for innovation led me to React, where I developed responsive interfaces, and WordPress, where I built robust, customized websites.",
+                        "Further enhancing my workflow, I embraced Figma for prototyping and user-centric design. Today, I seamlessly blend creativity and technical finesse, transitioning between graphic and web design to deliver visually stunning, functional digital experiences.",
                     ],
                     workEn: [
                         {
@@ -880,12 +869,8 @@
                             technicalSkills: "Technical Skills",
                             skillsPerformance: "Skills & Performance",
                             explorePortfolio: "Explore Portfolio",
-                            aboutP1: "I'm a versatile creative professional with a passion for bringing ideas to life through design and web development. My journey began in the world of graphic design, where I honed my skills in visual storytelling and creating captivating visuals.",
-                            aboutP2: "Eager to expand my horizons, I embarked on a journey of self-improvement and skill acquisition. I expanded my skill set into the realm of web development. I mastered HTML and CSS, delving into the intricacies of crafting seamless and visually pleasing web experiences. Furthering my expertise, I ventured into PHP, gaining proficiency in developing dynamic and interactive web applications.",
-                            aboutP3: "Continuing this evolution, I immersed myself in the realm of React component design. Embracing the latest technologies, I delved into React, enhancing my ability to create responsive and user-friendly interfaces that elevate the overall user experience.",
-                            aboutP4: "Not stopping there, I dived into the world of WordPress, where I honed my skills in developing robust and visually appealing websites. My expertise in WordPress has allowed me to bring a diverse range of projects to life, each tailored to meet unique client needs.",
-                            aboutP5: "Expanding my toolkit, I embraced Figma as a design platform, utilizing it to conceptualize, prototype, and breathe life into web ideas. This proficiency in Figma has streamlined my design process, allowing for more efficient collaboration and the creation of visually stunning and user-centric designs.",
-                            aboutP6: "In my current role, I leverage this comprehensive skill set to seamlessly transition between graphic and web design. Whether it's crafting engaging visuals, developing WordPress sites, or designing intuitive interfaces in Figma, I approach each project with a blend of creativity and technical finesse.",
+                            aboutP1: "I'm a versatile creative professional passionate about design and web development. My journey began in graphic design, where I honed my skills in visual storytelling and captivating visuals. Expanding my expertise, I mastered HTML, CSS, and PHP, enabling me to craft seamless, dynamic web experiences. My passion for innovation led me to React, where I developed responsive interfaces, and WordPress, where I built robust, customized websites.",
+                            aboutP2: "Further enhancing my workflow, I embraced Figma for prototyping and user-centric design. Today, I seamlessly blend creativity and technical finesse, transitioning between graphic and web design to deliver visually stunning, functional digital experiences.",
                             projectAll: "All",
                             projectLogoDesign: "Logo Design",
                             projectFlyerBrochure: "Flyer & Brochure",
@@ -915,12 +900,8 @@
                             technicalSkills: "المهارات الفنية",
                             skillsPerformance: "المهارات والأداء",
                             explorePortfolio: "استكشف المحفظة",
-                            aboutP1: "أنا محترف إبداعي متعدد المهارات ولدي شغف بتحويل الأفكار إلى واقع من خلال التصميم وتطوير الويب. بدأت رحلتي في عالم التصميم الجرافيكي، حيث صقلت مهاراتي في سرد القصص بصريًا وإنشاء تصاميم جذابة",
-                            aboutP2: "بدافع الرغبة في توسيع آفاقي، انطلقت في رحلة للتطوير الذاتي واكتساب المهارات. وسّعت مجموعة مهاراتي لتشمل تطوير الويب، حيث أتقنت HTML وCSS، متعمقًا في تفاصيل إنشاء تجارب ويب سلسة وجذابة بصريًا. واصلت تطوير خبرتي من خلال التعمق في لغة PHP، مما أكسبني القدرة على تطوير تطبيقات ويب ديناميكية وتفاعلية",
-                            aboutP3: "في إطار استمراري في هذا التطور، انغمست في عالم تصميم مكونات React. ومن خلال تبني أحدث التقنيات، تعمقت في React، مما عزز قدرتي على إنشاء واجهات متجاوبة وسهلة الاستخدام، تُحسِّن تجربة المستخدم بشكل عام",
-                            aboutP4: "لم أتوقف عند هذا الحد، بل اقتحمت عالم ووردبريس، حيث طوّرت مهاراتي في إنشاء مواقع ويب قوية وجذابة بصريًا. وقد مكنني إتقاني لووردبريس من تحويل مجموعة متنوعة من المشاريع إلى واقع، مع تكييف كل منها لتلبية احتياجات العملاء الفريدة",
-                            aboutP5: "وسعًا لمجموعة أدواتي، اعتمدت منصة Figma كأداة تصميم، مستخدمًا إياها في تخطيط الأفكار، وإنشاء النماذج الأولية، وإضفاء الحياة على مفاهيم الويب. وقد ساعدني إتقاني لـ Figma في تحسين سير عملي، مما سهّل التعاون الفعّال وأدى إلى ابتكار تصاميم مذهلة تركز على تجربة المستخدم",
-                            aboutP6: "في دوري الحالي، أستفيد من هذه المجموعة المتكاملة من المهارات للانتقال بسلاسة بين التصميم الجرافيكي وتطوير الويب. سواء كان الأمر يتعلق بإنشاء تصاميم بصرية جذابة، أو تطوير مواقع ووردبريس، أو تصميم واجهات سهلة الاستخدام في Figma، فإنني أتعامل مع كل مشروع بمزيج من الإبداع والبراعة التقنية",
+                            aboutP1: "أنا محترف إبداعي متعدد المهارات شغوف بالتصميم وتطوير الويب. بدأت رحلتي في مجال التصميم الجرافيكي، حيث طورت مهاراتي في السرد البصري وإنشاء المرئيات الجذابة. ومع توسع خبرتي، أتقنت HTML وCSS وPHP، مما مكنني من تطوير تجارب ويب سلسة وتفاعلية. دفعني شغفي بالابتكار إلى التعمق في React لإنشاء واجهات مستجيبة، وكذلك في WordPress لبناء مواقع مخصصة وقوية.",
+                            aboutP2: "أنا محترف إبداعي متعدد المهارات شغوف بالتصميم وتطوير الويب. بدأت رحلتي في مجال التصميم الجرافيكي، حيث طورت مهاراتي في السرد البصري وإنشاء المرئيات الجذابة. ومع توسع خبرتي، أتقنت HTML وCSS وPHP، مما مكنني من تطوير تجارب ويب سلسة وتفاعلية. دفعني شغفي بالابتكار إلى التعمق في React لإنشاء واجهات مستجيبة، وكذلك في WordPress لبناء مواقع مخصصة وقوية.",
                             projectAll: "الكل",
                             projectLogoDesign: "تصميم الشعار ",
                             projectFlyerBrochure: "تصميم المنشورات والكتيبات",
